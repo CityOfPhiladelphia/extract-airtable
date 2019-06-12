@@ -1,0 +1,38 @@
+sudo: required
+
+language: python
+python: "3.5"
+
+addons:
+  apt:
+    packages:
+      - python-virtualenv
+      - python3-dev
+      - build-essential
+
+services:
+  - docker
+
+before_install:
+  - |
+      if [ "$TRAVIS_BRANCH" = "test" ]; then
+        export ENVIRONMENT="test"
+      elif [ "$TRAVIS_BRANCH" = "master" ]; then
+        export ENVIRONMENT="prod"
+      fi
+  - chmod +x .travis/*.sh
+
+install: 
+  # setuptools didn't play nicely with git dependencies so we'll have to just install from github
+  - pip install git+https://github.com/CityOfPhiladelphia/extract-airtable.git@$TRAVIS_BRANCH#egg=extract-airtable awscli
+
+script:
+  - echo "no tests!" # put testing scripts here once they're written
+
+deploy:
+  - provider: script
+    script: .travis/deploy_ecr.sh
+    on:
+      all_branches: true
+      condition: $TRAVIS_BRANCH =~ ^master|test$
+    skip_cleanup: true
