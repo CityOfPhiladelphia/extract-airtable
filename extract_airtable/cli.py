@@ -65,6 +65,13 @@ def get_records(app_id: str,
     if 'offset' in data:
         yield from get_records(app_id, api_key, table_name, offset=data['offset'], rows_per_page=1000)
 
+def process_row(row: Dict) -> Dict:
+    for key, value in row.items():
+        if isinstance(value, list):
+            row[key] = json.dumps(value)
+
+    return row
+
 def load_to_s3(s3_bucket: str, s3_key: str, file_path: str) -> None:
     s3 = boto3.resource('s3')
     s3.Object(s3_bucket, s3_key).put(Body=open(file_path, 'rb'))
@@ -98,7 +105,8 @@ def extract_records_inner(app_id: str,
 
             for records_batch in get_records(app_id, api_key, table_name):
                 for record in records_batch:
-                    writer.writerow(record['fields'])
+                    row = process_row(record['fields'])
+                    writer.writerow(row)
 
         load_to_s3(s3_bucket, s3_key, file_path)
         clean_up(file_path)
@@ -110,7 +118,8 @@ def extract_records_inner(app_id: str,
 
         for records_batch in get_records(app_id, api_key, table_name):
             for record in records_batch:
-                writer.writerow(record['fields'])
+                row = process_row(record['fields'])
+                writer.writerow(row)
         
         sys.stdout.flush()
 
