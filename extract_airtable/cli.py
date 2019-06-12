@@ -9,9 +9,6 @@ import click
 import boto3
 
 
-def to_snake_case(text: str) -> str:
-    return text.replace(' ', '_').lower()
-
 def get_fieldnames(app_id: str, 
                    api_key: str, 
                    table_name: str, 
@@ -39,7 +36,7 @@ def get_fieldnames(app_id: str,
             if fieldname not in fieldnames:
                 fieldnames.append(fieldname)
                 
-    return [to_snake_case(fieldname) for fieldname in fieldnames]
+    return fieldnames
 
 def get_records(app_id: str, 
                 api_key: str, 
@@ -97,8 +94,7 @@ def extract_records_inner(app_id: str,
         with open(file_path, 'w', newline='') as f:
             writer = csv.DictWriter(f, fieldnames=fieldnames)
 
-            snake_case_fieldnames = [to_snake_case(fieldname) for fieldname in fieldnames]
-            writer.writerow(snake_case_fieldnames)
+            writer.writeheader()
 
             for records_batch in get_records(app_id, api_key, table_name):
                 for record in records_batch:
@@ -110,8 +106,7 @@ def extract_records_inner(app_id: str,
     else:
         writer = csv.DictWriter(sys.stdout, fieldnames=fieldnames)
 
-        snake_case_fieldnames = [to_snake_case(fieldname) for fieldname in fieldnames]
-        writer.writerow(snake_case_fieldnames)
+        writer.writeheader()
 
         for records_batch in get_records(app_id, api_key, table_name):
             for record in records_batch:
