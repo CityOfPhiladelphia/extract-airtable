@@ -89,7 +89,7 @@ def extract_records_inner(app_id: str,
 
         # On Linux, save to tmp folder
         if os.name != 'nt':
-            output_file = '/tmp/{}'.format(output_file)
+            file_path = '/tmp/{}'.format(file_path)
 
         with open(file_path, 'w', newline='') as f:
             writer = csv.DictWriter(f, fieldnames=fieldnames)
