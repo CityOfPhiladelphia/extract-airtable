@@ -122,9 +122,9 @@ def main():
 @click.argument('app_id')
 @click.argument('api_key')
 @click.argument('table_name')
-@click.option('--rows-per-page', default=1000)
-@click.option('--s3-bucket', default=None)
-@click.option('--s3-key', default=None)
+@click.option('--rows-per-page', default=1000, help='The number of rows to load per page')
+@click.option('--s3-bucket', default=None, help='Optional S3 bucket to upload to')
+@click.option('--s3-key', default=None, help='Optional S3 key to upload to')
 def extract_records(app_id: str, 
                     api_key: str, 
                     table_name: str, 
