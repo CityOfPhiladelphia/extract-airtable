@@ -29,7 +29,7 @@ def test_getfieldnames(mocked_request, response):
         'hide_on_finder',
     ]
 
-    assert fieldnames == expected_fieldnames
+    assert sorted(fieldnames) == sorted(expected_fieldnames)
 
 @patch('requests.get')
 def test_get_records(mocked_request, response):
