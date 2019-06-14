@@ -11,6 +11,11 @@ setup(
         'requests==2.20.0',
         'boto3==1.9.145'
     ],
+    extras_require={
+        'dev': [
+            'pytest==4.4.1'
+        ]
+    },
     entry_points={
         'console_scripts': [
             'extract-airtable=extract_airtable:main',

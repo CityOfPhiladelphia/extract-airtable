@@ -29,6 +29,11 @@ extract-airtable extract-records \
 pip install git+https://github.com/CityOfPhiladelphia/extract-airtable#egg=extract_airtable
 ```
 
+## Tests
+```bash
+pytest tests/
+```
+
 ## Deployment
 When a commit is made to master or test, Travis CI builds a docker image with an installed version of this repo and pushes it to ECR.
 

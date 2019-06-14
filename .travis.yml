@@ -24,10 +24,10 @@ before_install:
 
 install: 
   # setuptools didn't play nicely with git dependencies so we'll have to just install from github
-  - pip install git+https://github.com/CityOfPhiladelphia/extract-airtable.git@$TRAVIS_BRANCH#egg=extract-airtable awscli
+  - pip install git+https://github.com/CityOfPhiladelphia/extract-airtable.git@$TRAVIS_BRANCH#egg=extract-airtable[dev] awscli
 
 script:
-  - echo "no tests!" # put testing scripts here once they're written
+  - pytest -p no:warnings tests/
 
 deploy:
   - provider: script

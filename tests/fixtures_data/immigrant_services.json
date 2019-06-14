@@ -1,0 +1,402 @@
+{
+    "records": [
+        {
+            "id": "rec0pNEBObUtWbnT4",
+            "fields": {
+                "organization_name": "Bethanna",
+                "street_address": "2501 Reed Street, Philadelphia, PA 19146",
+                "phone_number": "215-568-2435",
+                "email": "info@bethanna.org",
+                "website": "www.bethanna.org",
+                "services_offered": [
+                    "Health/mental health services",
+                    "Immigrant focused youth programs"
+                ],
+                "tags": [
+                    "English",
+                    "Haitian-Creole",
+                    "Mandarin",
+                    "Spanish",
+                    "Swahili"
+                ]
+            },
+            "createdTime": "2019-06-11T00:28:54.000Z"
+        },
+        {
+            "id": "rec1cIQLkxp5uCe7a",
+            "fields": {
+                "organization_name": "Ceiba",
+                "street_address": "174 W Diamond Street, Philadelphia, PA 19122",
+                "phone_number": "215-634-7245",
+                "email": "info@ceibaphiladelphia.org",
+                "website": "www.ceibaphiladelphia.org",
+                "services_offered": [
+                    "Housing assistance",
+                    "Immigrant advocacy"
+                ],
+                "tags": [
+                    "Spanish"
+                ]
+            },
+            "createdTime": "2019-06-11T00:28:54.000Z"
+        },
+        {
+            "id": "rec3tvr1gv1fptIU6",
+            "fields": {
+                "organization_name": "Project Capoeira, Inc.",
+                "street_address": "1213 Race Street, Philadelphia, PA 19107",
+                "phone_number": "215-601-9117",
+                "website": "www.phillycapoeira.com",
+                "services_offered": [
+                    "Arts & culture",
+                    "Immigrant focused youth programs"
+                ],
+                "tags": [
+                    "English",
+                    "French",
+                    "Brazilian Portuguese"
+                ]
+            },
+            "createdTime": "2019-06-11T00:28:54.000Z"
+        },
+        {
+            "id": "rec4CVYP84mrfKTkD",
+            "fields": {
+                "organization_name": "Esperanza Immigration Legal Services",
+                "street_address": "4261 N 5th Street, Philadelphia, PA 19140",
+                "phone_number": "215-324-0746",
+                "website": "http://www.esperanza.us/eils/",
+                "services_offered": [
+                    "Citizenship",
+                    "English (ESL) classes",
+                    "Immigrant advocacy",
+                    "Legal services"
+                ],
+                "tags": [
+                    "English",
+                    "Spanish"
+                ]
+            },
+            "createdTime": "2019-06-11T00:28:54.000Z"
+        },
+        {
+            "id": "rec4DyOFckwyqegq3",
+            "fields": {
+                "organization_name": "Catholic Social Services",
+                "street_address": "227 N. 18th Street, Philadelphia, PA 19103",
+                "phone_number": "215-854-7019",
+                "email": "immigrationlegalservices@chs-adphila.org",
+                "website": "www.immigrationlegalservices.org",
+                "services_offered": [
+                    "Immigrant advocacy",
+                    "Legal services"
+                ],
+                "tags": [
+                    "English",
+                    "French",
+                    "Italian",
+                    "Spanish"
+                ]
+            },
+            "createdTime": "2019-06-11T00:28:54.000Z"
+        },
+        {
+            "id": "rec4ILLZvJBH3CXg6",
+            "fields": {
+                "organization_name": "Indochinese American Council",
+                "street_address": "4936 Old York Road, Philadelphia, PA 19141",
+                "phone_number": "215-457-0272",
+                "email": "cevo@iacphila.org",
+                "website": "http://www.iacphila.org/",
+                "services_offered": [
+                    "Arts & culture",
+                    "Citizenship",
+                    "English (ESL) classes",
+                    "Immigrant advocacy",
+                    "Job readiness",
+                    "Immigrant focused youth programs"
+                ],
+                "tags": [
+                    "English",
+                    "Arabic",
+                    "French",
+                    "Haitian-Creole",
+                    "Mandarin",
+                    "Spanish",
+                    "Vietnamese"
+                ]
+            },
+            "createdTime": "2019-06-11T00:28:54.000Z"
+        },
+        {
+            "id": "rec7zQRVm0PxNKwIk",
+            "fields": {
+                "organization_name": "Kiths Integrated and Targeted Human Services, Inc. (KITHS)",
+                "street_address": "4911 Old York Road, 1st Floor, Philadelphia, PA 19141",
+                "phone_number": "215-278-6222",
+                "email": "Kithsnonprofit@gmail.com",
+                "website": "www.kithsnonprofit.org",
+                "services_offered": [
+                    "Immigrant advocacy"
+                ],
+                "tags": [
+                    "English",
+                    "Cambodian (Khmer)"
+                ]
+            },
+            "createdTime": "2019-06-11T00:28:54.000Z"
+        },
+        {
+            "id": "rec8yy8NGV9aafB9l",
+            "fields": {
+                "organization_name": "Penn Asian Senior Services",
+                "street_address": "6926 Old York Road, Philadelphia, PA 19126",
+                "phone_number": "215-572-1234",
+                "email": "admin@passi.su",
+                "website": "www.passi.us",
+                "services_offered": [
+                    "Health/mental health services"
+                ],
+                "tags": [
+                    "English",
+                    "Korean",
+                    "Mandarin",
+                    "Spanish",
+                    "Vietnamese",
+                    "Cantonese",
+                    "Cambodian",
+                    "Hindi"
+                ]
+            },
+            "createdTime": "2019-06-11T00:28:54.000Z"
+        },
+        {
+            "id": "rec9nRwwnki4lz7fE",
+            "fields": {
+                "organization_name": "Pennsylvania Immigration and Citizenship Coalition",
+                "street_address": "2100 Arch St, 4th Floor, Philadelphia, PA 19103",
+                "phone_number": "215-832-0636",
+                "email": "admin@paimmigrant.org",
+                "website": "www.paimmigrant.org",
+                "services_offered": [
+                    "Immigrant advocacy"
+                ],
+                "tags": [
+                    "English",
+                    "Spanish"
+                ]
+            },
+            "createdTime": "2019-06-11T00:28:54.000Z"
+        },
+        {
+            "id": "recALxIN3mTxgsNuj",
+            "fields": {
+                "organization_name": "District 1199C Training & Upgrading Fund",
+                "street_address": "100 S. Broad Street, 10th Floor, Philadelphia, PA 19110",
+                "phone_number": "215-568-2220",
+                "website": "http://www.1199ctraining.org",
+                "services_offered": [
+                    "Citizenship",
+                    "English (ESL) classes",
+                    "Job readiness",
+                    "Immigrant focused youth programs"
+                ],
+                "tags": [
+                    "English",
+                    "Mandarin",
+                    "Spanish"
+                ]
+            },
+            "createdTime": "2019-06-11T00:28:54.000Z"
+        },
+        {
+            "id": "recD0yeZAnDWXr9D4",
+            "fields": {
+                "organization_name": "Lambert Legacy Charities",
+                "street_address": "1735 Market St, 52nd Floor, Philadelphia, PA 19103",
+                "phone_number": "949-667-1479",
+                "email": "Info@LambertLegacyCharities.com",
+                "website": "LambertLegacyCharities.com",
+                "services_offered": [
+                    "Arts & culture",
+                    "Job readiness",
+                    "Immigrant focused youth programs"
+                ],
+                "tags": [
+                    "English"
+                ]
+            },
+            "createdTime": "2019-06-11T00:28:54.000Z"
+        },
+        {
+            "id": "recGMdgN111fBqDCR",
+            "fields": {
+                "organization_name": "ACLAMO Family Centers",
+                "street_address": "512 West Marshall Street, Norristown, PA 19401",
+                "phone_number": "610-277-2570",
+                "website": "www.aclamo.org",
+                "services_offered": [
+                    "Citizenship",
+                    "English (ESL) classes",
+                    "Immigrant advocacy",
+                    "Job readiness",
+                    "Immigrant focused youth programs"
+                ],
+                "tags": [
+                    "English",
+                    "Spanish"
+                ]
+            },
+            "createdTime": "2019-06-11T00:28:54.000Z"
+        },
+        {
+            "id": "recGba1sJps1MXIXv",
+            "fields": {
+                "organization_name": "Aquinas Center ",
+                "street_address": "1700 Fernon Street, Philadelphia, PA 19145",
+                "phone_number": "267-469-0813",
+                "email": "legal@aquinascenterphilly.org",
+                "website": "http://aquinascenterphilly.org/legalservices/",
+                "services_offered": [
+                    "Legal services"
+                ],
+                "tags": [
+                    "English",
+                    "Spanish",
+                    "Vietnamese",
+                    "Bahasa Indonesian",
+                    "French-Creole"
+                ]
+            },
+            "createdTime": "2019-06-11T00:28:54.000Z"
+        },
+        {
+            "id": "recGoFVANFI2j8SOp",
+            "fields": {
+                "organization_name": "Health Promotion Council",
+                "street_address": "1500 Market Street, Centre Square East, Philadelphia, PA 19102",
+                "phone_number": "215-985-6150",
+                "email": "hpcpa@phmc.org",
+                "website": "www.hpcpa.org",
+                "services_offered": [
+                    "Immigrant focused youth programs",
+                    "Health/mental health services"
+                ],
+                "tags": [
+                    "English",
+                    "Mandarin",
+                    "Spanish",
+                    "Vietnamese"
+                ]
+            },
+            "createdTime": "2019-06-11T00:28:54.000Z"
+        },
+        {
+            "id": "recIafoD8C9ltCbKz",
+            "fields": {
+                "organization_name": "Anti-Defamation League",
+                "street_address": "1500 Market Street, Philadelphia, PA 19102",
+                "phone_number": "215-568-2223",
+                "website": "https://philadelphia.adl.org/",
+                "services_offered": [
+                    "Immigrant advocacy"
+                ],
+                "tags": [
+                    "English"
+                ]
+            },
+            "createdTime": "2019-06-11T00:28:54.000Z"
+        },
+        {
+            "id": "recIvW6l48gOZkN3j",
+            "fields": {
+                "organization_name": "JEVS Human Services ",
+                "street_address": "1845 Walnut Street, 7th Floor, Philadelphia, PA 19103",
+                "phone_number": "215-854-1800",
+                "email": "info@jevs.org ",
+                "website": "https://www.jevshumanservices.org/",
+                "services_offered": [
+                    "English (ESL) classes",
+                    "Job readiness",
+                    "Refugee/asylee services"
+                ],
+                "tags": [
+                    "English",
+                    "Arabic",
+                    "Russian",
+                    "Spanish"
+                ]
+            },
+            "createdTime": "2019-06-11T00:28:54.000Z"
+        },
+        {
+            "id": "recJe85tryCRdj6Un",
+            "fields": {
+                "organization_name": "Mexican Cultural Center",
+                "street_address": "111 S. Independence Mall East, Suite 310, Philadelphia, PA 19106",
+                "phone_number": "215-592-0410",
+                "email": "info@mexicanculturalcenter.org",
+                "website": "www.mexicanculturalcenter.org",
+                "services_offered": [
+                    "Arts & culture"
+                ],
+                "tags": [
+                    "English",
+                    "Spanish"
+                ]
+            },
+            "createdTime": "2019-06-11T00:28:54.000Z"
+        },
+        {
+            "id": "recL4KLJTMxZAc3Gu",
+            "fields": {
+                "organization_name": "Upper Darby Township Welcome Center",
+                "street_address": "7000 Walnut Street, Upper Darby Township, PA 19082",
+                "phone_number": "610-734-7784",
+                "website": "http://upperdarby.org/Gov/Leisure_Services/Welcome_Center.html",
+                "hide_on_finder": "TRUE",
+                "services_offered": [
+                    "Citizenship",
+                    "English (ESL) classes",
+                    "Job readiness",
+                    "Legal services"
+                ],
+                "tags": [
+                    "English",
+                    "Spanish"
+                ]
+            },
+            "createdTime": "2019-06-11T00:28:54.000Z"
+        },
+        {
+            "id": "recLVtIOIpRMptk2u",
+            "fields": {
+                "organization_name": "African Family Health Organization (AFAHO)",
+                "street_address": "4415 Chestnut Street, Suite 202, Philadelphia, PA 19104",
+                "phone_number": "215-546-1232",
+                "email": "afaho13@gmail.com",
+                "website": "www.afaho.net",
+                "services_offered": [
+                    "English (ESL) classes",
+                    "Immigrant advocacy",
+                    "Refugee/asylee services",
+                    "Immigrant focused youth programs"
+                ],
+                "tags": [
+                    "English",
+                    "Arabic",
+                    "French",
+                    "Haitian-Creole",
+                    "Mandingo",
+                    "Bambara",
+                    "Swahili",
+                    "Krio",
+                    "Patois",
+                    "Ewe",
+                    "Pular"
+                ]
+            },
+            "createdTime": "2019-06-11T00:28:54.000Z"
+        }
+    ]
+}
