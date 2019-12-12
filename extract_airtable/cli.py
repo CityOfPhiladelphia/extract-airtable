@@ -15,7 +15,6 @@ def get_fieldnames(app_id: str,
                    fields: Optional[str], 
                    n_rows: int = 1000) -> List[Type]:
 
-    fields_fmt = []
     request_stmt = 'https://api.airtable.com/v0/{app_id}/{table_name}?maxRecords={max_records}'.format(
             app_id=app_id,
             table_name=table_name,
@@ -51,7 +50,6 @@ def get_records(app_id: str,
                 offset: Optional[int] = None, 
                 rows_per_page: int = 1000) -> Type:
 
-    fields_fmt = []
     request_stmt = 'https://api.airtable.com/v0/{app_id}/{table_name}?maxRecords={max_records}'.format(
             app_id=app_id,
             table_name=table_name,
