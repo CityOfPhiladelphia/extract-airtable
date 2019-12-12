@@ -8,6 +8,7 @@ from extract_airtable.cli import get_fieldnames, get_records, process_row
 APP_ID = 'fake_app_id'
 API_KEY = 'fake_api_key'
 TABLE_NAME = 'immigration_services'
+FIELDS = None
 
 @patch('requests.get')
 def test_getfieldnames(mocked_request, response):
@@ -16,7 +17,8 @@ def test_getfieldnames(mocked_request, response):
     fieldnames = get_fieldnames(
         app_id=APP_ID,
         api_key=API_KEY,
-        table_name=TABLE_NAME)
+        table_name=TABLE_NAME,
+        fields=FIELDS)
 
     expected_fieldnames = [
         'organization_name',
@@ -39,7 +41,8 @@ def test_get_records(mocked_request, response):
         get_records(
             app_id=APP_ID,
             api_key=API_KEY,
-            table_name=TABLE_NAME
+            table_name=TABLE_NAME,
+            fields=FIELDS
         )
     )[0]
 
