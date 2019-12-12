@@ -11,20 +11,26 @@ import boto3
 
 def get_fieldnames(app_id: str, 
                    api_key: str, 
-                   table_name: str, 
+                   table_name: str,
+                   fields: Optional[str], 
                    n_rows: int = 1000) -> List[Type]:
-    
-    response = requests.get(
-        'https://api.airtable.com/v0/{app_id}/{table_name}?maxRecords={max_records}'.format(
-            app_id=app_id, 
-            table_name=table_name, 
+
+    fields_fmt = []
+    request_stmt = 'https://api.airtable.com/v0/{app_id}/{table_name}?maxRecords={max_records}'.format(
+            app_id=app_id,
+            table_name=table_name,
             max_records=n_rows,
-        ),
+        )
+    if fields:
+        for field in fields.split(','):
+            request_stmt = request_stmt + '&fields%5B%5D=' + field
+    response = requests.get(
+        request_stmt,
         headers={
             'Authorization': 'Bearer {api_key}'.format(api_key=api_key)
         }
     )
-    
+
     data = response.json()
 
     fieldnames = []
@@ -35,21 +41,27 @@ def get_fieldnames(app_id: str,
         for fieldname in record_fieldnames:
             if fieldname not in fieldnames:
                 fieldnames.append(fieldname)
-                
+
     return fieldnames
 
 def get_records(app_id: str, 
                 api_key: str, 
                 table_name: str, 
+                fields: Optional[str],
                 offset: Optional[int] = None, 
                 rows_per_page: int = 1000) -> Type:
-    
-    response = requests.get(
-        'https://api.airtable.com/v0/{app_id}/{table_name}?maxRecords={max_records}'.format(
-            app_id=app_id, 
-            table_name=table_name, 
+
+    fields_fmt = []
+    request_stmt = 'https://api.airtable.com/v0/{app_id}/{table_name}?maxRecords={max_records}'.format(
+            app_id=app_id,
+            table_name=table_name,
             max_records=rows_per_page
-        ),
+        )
+    if fields:
+        for field in fields.split(','):
+            request_stmt = request_stmt + '&fields%5B%5D=' + field
+    response = requests.get(
+        request_stmt,
         headers={
             'Authorization': 'Bearer {api_key}'.format(api_key=api_key)
         },
@@ -57,13 +69,13 @@ def get_records(app_id: str,
             'offset': offset
         }
     )
-    
+
     data = response.json()
-    
+
     yield data['records']
-    
+
     if 'offset' in data:
-        yield from get_records(app_id, api_key, table_name, offset=data['offset'], rows_per_page=1000)
+        yield from get_records(app_id, api_key, table_name, fields=fields,offset=data['offset'], rows_per_page=1000)
 
 def process_row(row: Dict) -> Dict:
     for key, value in row.items():
@@ -80,15 +92,15 @@ def clean_up(file_path: str) -> None:
     if os.path.isfile(file_path):
         os.remove(file_path)
 
-def extract_records_inner(app_id: str, 
-                          api_key: str, 
-                          table_name: str, 
-                          offset: Optional[int] = None, 
+def extract_records_inner(app_id: str,
+                          api_key: str,
+                          table_name: str,
+                          offset: Optional[int] = None,
                           rows_per_page: int = 1000,
                           s3_bucket: Optional[str] = None,
-                          s3_key: Optional[str] = None) -> None:
-    
-    fieldnames = get_fieldnames(app_id, api_key, table_name)
+                          s3_key: Optional[str] = None,
+                          fields: Optional[str] = None) -> None:
+    fieldnames = get_fieldnames(app_id, api_key, table_name, fields)
 
     if (s3_bucket and s3_key):
 
@@ -103,7 +115,7 @@ def extract_records_inner(app_id: str,
 
             writer.writeheader()
 
-            for records_batch in get_records(app_id, api_key, table_name):
+            for records_batch in get_records(app_id, api_key, table_name, fields):
                 for record in records_batch:
                     row = process_row(record['fields'])
                     writer.writerow(row)
@@ -116,11 +128,11 @@ def extract_records_inner(app_id: str,
 
         writer.writeheader()
 
-        for records_batch in get_records(app_id, api_key, table_name):
+        for records_batch in get_records(app_id, api_key, table_name, fields):
             for record in records_batch:
                 row = process_row(record['fields'])
                 writer.writerow(row)
-        
+
         sys.stdout.flush()
 
 @click.group()
@@ -134,20 +146,23 @@ def main():
 @click.option('--rows-per-page', default=1000, help='The number of rows to load per page')
 @click.option('--s3-bucket', default=None, help='Optional S3 bucket to upload to')
 @click.option('--s3-key', default=None, help='Optional S3 key to upload to')
-def extract_records(app_id: str, 
-                    api_key: str, 
-                    table_name: str, 
+@click.option('--fields', default=None, help='Optional comma delimited string of fieldnames to export')
+def extract_records(app_id: str,
+                    api_key: str,
+                    table_name: str,
                     rows_per_page: int = 1000,
                     s3_bucket: Optional[str] = None,
-                    s3_key: Optional[str] = None) -> None:
-                    
+                    s3_key: Optional[str] = None,
+                    fields: Optional[str] = None) -> None:
+
     extract_records_inner(
-        app_id=app_id, 
-        api_key=api_key, 
-        table_name=table_name, 
-        rows_per_page=rows_per_page, 
-        s3_bucket=s3_bucket, 
-        s3_key=s3_key)
+        app_id=app_id,
+        api_key=api_key,
+        table_name=table_name,
+        rows_per_page=rows_per_page,
+        s3_bucket=s3_bucket,
+        s3_key=s3_key,
+        fields=fields)
 
 if __name__ == '__main__':
     main()
